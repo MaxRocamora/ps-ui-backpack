@@ -1,8 +1,5 @@
 ''' Load UI Related functions and classes '''
 
-# pre-load icons resources
-from ps_ui.icons import qt_icons_py3 as icons
-
 # css
 from ps_ui.css import css_widgets as css
 from ps_ui.css.css_push_button import style_push_button
