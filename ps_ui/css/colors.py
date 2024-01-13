@@ -13,7 +13,6 @@ class Colors(Enum):
     YELLOW = Color('rgb(240, 240, 0)', 'rgb(30, 30, 30)')
     GRAY = Color('rgb(80, 80, 80)', 'rgb(230, 230, 230)')
     DISABLED = Color('rgb(80, 80, 80)', 'rgb(180, 180, 180)')
-    LIGHTGREY = Color('rgb(100, 100, 100)', 'rgb(230, 230, 230)')
 
 
 if __name__ == '__main__':
