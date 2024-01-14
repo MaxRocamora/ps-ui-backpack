@@ -14,8 +14,7 @@ if __name__ == '__main__':
     main_window = QMainWindow()
 
     # set the size of the main window
-    main_window.setMinimumSize(400, 600)
-    main_window.setMaximumSize(400, 600)
+    main_window.setMinimumSize(200, 800)
 
     main_window.show()
 
