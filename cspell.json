@@ -5,10 +5,18 @@
     "dictionaries": [],
     "words": [
         "autopep",
+        "cbox",
+        "darkgray",
+        "groupbox",
         "Monokai",
         "omui",
+        "pixmap",
+        "qlineedit",
+        "qlistwidget",
+        "qmenu",
         "Segoe",
-        "shiboken"
+        "shiboken",
+        "subcontrol"
     ],
     "ignoreWords": [],
     "import": []
