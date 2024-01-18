@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 setup(
     name='pyside-ui-backpack',
     version='0.1.0',
-    description='Helper functions for PySide2 UI development',
+    description='Helper functions for PySide2 UI Widgets',
     url='https://github.com/MaxRocamora/ps-ui-backpack',
     author='Maximiliano Rocamora',
     author_email='maxirocamora@gmail.com',
@@ -22,7 +22,7 @@ setup(
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
-        "Topic :: Software Development :: PySide2 :: UI :: Development"
+        "Topic :: Software Development :: PySide2 :: UI"
     ],
     python_requires='>=3.7',
     package_data={
