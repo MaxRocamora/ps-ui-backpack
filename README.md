@@ -24,7 +24,8 @@ widgets.PushButton(parent, 'qt_name', (120, 21) , Colors.blue)
 from ps_ui_backpack import dialogs
 
 dialogs.inform_dialog(parent, 'message', 'title')
-
+dialog.inform_dialog_small(parent, 'message', 'title')
+dialogs.warning_dialog(parent, 'error_message', 'title')
 dialogs.warning_dialog(parent, 'error_message', 'title')
 
 ```
@@ -32,7 +33,12 @@ dialogs.warning_dialog(parent, 'error_message', 'title')
 ### CSS
 
 ```python
-from ps_ui_backpack import utils
+from ps_ui import style_push_button, Colors
+
+# style a button widget
+button = QPushButton(main_window)
+style_push_button(main_window, button, Colors.BLUE)
+
 ```
 
 ### Utils
