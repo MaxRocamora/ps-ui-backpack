@@ -5,7 +5,7 @@ from ps_ui.css.colors import Colors
 
 
 def style_push_button(QtWindow: QMainWindow, button: QPushButton,
-                      color: Colors = Colors.GRAY, shadow: bool = True):
+                      color: Colors = Colors.GREY, shadow: bool = True):
     ''' apply style to a QPushButton widget
 
         Colors are:
