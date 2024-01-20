@@ -16,7 +16,7 @@ class Colors(Enum):
     ORANGE = Color('rgb(236, 183, 41)', WHITE_BACKGROUND)
     GREEN = Color('rgb(40, 205, 50)', WHITE_BACKGROUND)
     YELLOW = Color('rgb(200, 200, 0)', WHITE_BACKGROUND)
-    GRAY = Color('rgb(80, 80, 80)', WHITE_BACKGROUND)
+    GREY = Color('rgb(80, 80, 80)', WHITE_BACKGROUND)
     WHITE = Color('rgb(30, 30, 30)', WHITE_BACKGROUND)
 
     # dark theme
@@ -25,7 +25,7 @@ class Colors(Enum):
     DARK_ORANGE = Color('rgb(236, 183, 41)', DARK_BACKGROUND)
     DARK_GREEN = Color('rgb(40, 205, 50)', DARK_BACKGROUND)
     DARK_YELLOW = Color('rgb(240, 240, 0)', DARK_BACKGROUND)
-    DARK_GRAY = Color('rgb(80, 80, 80)', DARK_BACKGROUND)
+    DARK_GREY = Color('rgb(80, 80, 80)', DARK_BACKGROUND)
     DARK_WHITE = Color('rgb(240, 240, 240)', DARK_BACKGROUND)
 
 
