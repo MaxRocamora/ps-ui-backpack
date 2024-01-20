@@ -1,6 +1,8 @@
 # ps-ui-backpack
  PySide UI Utilities
 
+Personal PySide2 UI utilities
+
 ## Installation
 
 ```bash
@@ -14,7 +16,7 @@ pip install ps-ui-backpack
 ```python
 from ps_ui_backpack import widgets, Colors
 
-widgets.PushButton(parent, 'qt_name', (120, 21) , Colors.blue)
+widgets.PushButton(parent, 'qt_name', (120, 21) , Colors.BLUE)
 
 ```
 
@@ -40,6 +42,19 @@ button = QPushButton(main_window)
 style_push_button(main_window, button, Colors.BLUE)
 
 ```
+
+### Colors
+
+Colors.py contains a list of colors
+
+```python
+from ps_ui_backpack import Colors
+
+Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORANGE, Colors.GREY, Colors.WHITE
+Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors.DARK_ORANGE, Colors.DARK_GREY, Colors.DARK_WHITE
+```
+
+![Push Button](img/button_colors.png)
 
 ### Utils
 
