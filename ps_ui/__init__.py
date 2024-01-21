@@ -1,4 +1,5 @@
 ''' Load UI Related functions and classes '''
+from ps_ui.version import __version__
 
 # css
 from ps_ui.css import css_widgets as css
