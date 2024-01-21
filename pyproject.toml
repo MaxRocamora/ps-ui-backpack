@@ -15,8 +15,6 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
-    "LICENSE :: OSI APPROVED :: MIT LICENSE",
-    "Topic :: Software Development :: PySide2 :: UI"
 ]
 license = {file = "LICENSE"}
 
