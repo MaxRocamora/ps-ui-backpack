@@ -19,16 +19,16 @@ pip install ps-ui-backpack
 ### Widgets
 
 ```python
-from ps_ui_backpack import widgets, Colors
+from ps_ui import widgets, Colors
 
-widgets.PushButton(parent, 'qt_name', (120, 21) , Colors.BLUE)
+widgets.PushButton(parent, 'qt_name', text, (120, 21) , Colors.BLUE)
 
 ```
 
 ### Dialogs
 
 ```python
-from ps_ui_backpack import dialogs
+from ps_ui import dialogs
 
 dialogs.inform_dialog(parent, 'message', 'title')
 dialog.inform_dialog_small(parent, 'message', 'title')
@@ -53,7 +53,7 @@ style_push_button(main_window, button, Colors.BLUE)
 Colors.py contains a list of colors
 
 ```python
-from ps_ui_backpack import Colors
+from ps_ui import Colors
 
 Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORANGE, Colors.GREY, Colors.WHITE
 Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors.DARK_ORANGE, Colors.DARK_GREY, Colors.DARK_WHITE
@@ -66,7 +66,7 @@ Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors
 Wait Cursor decorator
 
 ```python
-from ps_ui_backpack import wait_cursor
+from ps_ui import wait_cursor
 
 @wait_cursor
 def long_running_function():
