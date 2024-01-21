@@ -1,0 +1,27 @@
+
+[project]
+name = "pyside-ui-backpack"
+version = "0.1.0"
+authors = [
+    { name="Maximiliano Rocamora", email="maxirocamora@gmail.com" },
+]
+description = "Helper functions for PySide2 UI Widgets"
+readme = "README.md"
+requires-python = ">=3.7.0"
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: PySide2 :: UI"
+]
+license = { text = "MIT" }
+
+[project.urls]
+Homepage = "https://github.com/MaxRocamora/ps-ui-backpack"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
