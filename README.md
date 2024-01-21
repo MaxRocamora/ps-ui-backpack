@@ -1,7 +1,7 @@
 [![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/pyside-ui-backpack.svg?style=flat-square&logo=appveyor)](https://pypi.python.org/pypi/pyside-ui-backpack/)
 [![PyPI version](https://badge.fury.io/py/pyside-ui-backpack.svg?style=flat-square&logo=appveyor)](https://badge.fury.io/py/pyside-ui-backpack)
-[![GitHub version](https://badge.fury.io/gh/MaxRocamora%2Fpyside-ui-backpack.svg?style=flat-square&logo=appveyor)](https://badge.fury.io/gh/MaxRocamora%2Fpyside-ui-backpack)
-[![Message](https://img.shields.io/badge/python--backpack-python-blue?style=flat-square&logo=appveyor)](https://github.com/MaxRocamora/pyside-ui-backpack)
+[![GitHub version](https://badge.fury.io/gh/MaxRocamora%2Fps-ui-backpack.svg?style=flat-square&logo=appveyor)](https://badge.fury.io/gh/MaxRocamora%2Fps-ui-backpack)
+[![Message](https://img.shields.io/badge/python--backpack-python-blue?style=flat-square&logo=appveyor)](https://github.com/MaxRocamora/ps-ui-backpack)
 
 
 # ps-ui-backpack
