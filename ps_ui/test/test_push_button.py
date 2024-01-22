@@ -14,7 +14,7 @@ if __name__ == '__main__':
     main_window = QMainWindow()
 
     # set the size of the main window
-    main_window.setMinimumSize(400, 400)
+    main_window.setMinimumSize(380, 400)
 
     main_window.show()
 
@@ -22,8 +22,8 @@ if __name__ == '__main__':
     for index, color in enumerate(Colors):
         push_button = PushButton(
             main_window, f'push_button {index}', color.name, (100, 30), color, True)
-        column = index % 2
-        row = index // 2
+        column = index % 3
+        row = index // 3
         push_button.move(20 + (column * 120), 20 + (row * 40))
         push_button.show()
 
