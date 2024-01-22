@@ -21,7 +21,7 @@ if __name__ == '__main__':
     button = QPushButton(main_window)
     button.setText('information')
     button.move(20, 20)
-    style_push_button(main_window, button, Colors.BLUE)
+    style_push_button(main_window, button, Colors.BG_BLUE)
     button.show()
 
     # test button 2
