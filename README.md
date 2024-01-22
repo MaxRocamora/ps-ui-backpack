@@ -55,8 +55,9 @@ Colors.py contains a list of colors
 ```python
 from ps_ui import Colors
 
-Colors.DISABLED Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORANGE, Colors.GREY, Colors.WHITE  
-Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors.DARK_ORANGE, Colors.DARK_GREY, Colors.DARK_WHITE
+Colors.DISABLED Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, ...
+Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, ...
+Colors.BG_BLUE, Colors.BG_RED, Colors.BG_GREEN, Colors.BG_YELLOW, ...
 ```
 
 ![Push Button](img/button_colors.png)
