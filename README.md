@@ -6,12 +6,12 @@
 # ps-ui-backpack
  PySide UI Utilities
 
-Personal PySide2 UI utilities for Maya/Houdini/Nuke Qt Tools
+Some shared PySide2 UI utilities for Maya/Houdini/Nuke Qt Tools
 
 ## Installation
 
 ```bash
-pip install ps-ui-backpack
+pip install pyside-ui-backpack
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ pip install ps-ui-backpack
 ```python
 from ps_ui import widgets, Colors
 
-widgets.PushButton(parent, 'qt_name', text, (120, 21) , Colors.BLUE)
+widgets.PushButton(parent, 'qt_name', 'Click Me' , (120, 21) , Colors.BLUE)
 
 ```
 
@@ -55,7 +55,7 @@ Colors.py contains a list of colors
 ```python
 from ps_ui import Colors
 
-Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORANGE, Colors.GREY, Colors.WHITE
+Colors.DISABLED Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORANGE, Colors.GREY, Colors.WHITE  
 Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors.DARK_ORANGE, Colors.DARK_GREY, Colors.DARK_WHITE
 ```
 
