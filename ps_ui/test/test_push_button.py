@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
     # create a push button for every color in Colors
     for index, color in enumerate(Colors):
-        push_button = PushButton(main_window, f'push_button {index}', (100, 30), color, True)
-        push_button.setText(color.name)
+        push_button = PushButton(
+            main_window, f'push_button {index}', color.name, (100, 30), color, True)
         column = index % 2
         row = index // 2
         push_button.move(20 + (column * 120), 20 + (row * 40))
