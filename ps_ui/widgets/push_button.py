@@ -8,18 +8,23 @@ from ps_ui.css.colors import Colors
 class PushButton(QPushButton):
 
     def __init__(self, parent: QMainWindow = None, qt_name: str = 'push_button',
-                 size: tuple = None, color: Colors = Colors.GREY, shadow: bool = True, **kwargs):
+                 text: str = 'button', size: tuple = None, color: Colors = Colors.GREY,
+                 shadow: bool = True, **kwargs):
         super().__init__(parent, **kwargs)
         ''' creates a custom QPushButton widget
 
         Args:
             parent (ui): parent ui class. Defaults to None.
             qt_name (str): qt widget name. Defaults to 'button'.
+            text (str, optional): button text. Defaults to 'button'.
             size (int tuple, optional): widget size. Defaults to None.
             color (Colors, optional): color theme. Defaults to Colors.GRAY.
             shadow (bool, optional): applies shadow. Defaults to True.
         '''
         self.setObjectName(qt_name)
+
+        # text
+        self.setText(text)
 
         # size
         if size:
