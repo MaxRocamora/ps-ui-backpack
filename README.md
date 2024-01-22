@@ -59,7 +59,7 @@ Colors.DISABLED Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, Colors.ORA
 Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, Colors.DARK_ORANGE, Colors.DARK_GREY, Colors.DARK_WHITE
 ```
 
-![Push Button](ps_ui/_img/button_colors.png)
+![Push Button](img/button_colors.png)
 
 ### Utils
 
