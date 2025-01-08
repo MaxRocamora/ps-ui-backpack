@@ -1,32 +1,27 @@
-
-[project]
+[tool.poetry]
 name = "pyside-ui-backpack"
-dynamic = ["version"]
-authors = [
-    { name="Maximiliano Rocamora", email="maxirocamora@gmail.com" },
-]
+version = "1.0.6"
 description = "Helper functions for PySide2 UI Widgets"
+authors = ["Maximiliano Rocamora <maxirocamora@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.7.0"
+homepage = "https://github.com/MaxRocamora/ps-ui-backpack"
+license = "MIT"
 classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
 ]
-license = {file = "LICENSE"}
 
-[project.urls]
-Homepage = "https://github.com/MaxRocamora/ps-ui-backpack"
+[tool.poetry.dependencies]
+python = ">=3.7,<3.14"
+
+[tool.poetry.dev-dependencies]
+pyside6 = "^6.8.1.1"
 
 [build-system]
-requires = ["setuptools", "wheel", "setuptools_scm"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-packages = ["ps_ui"]
-
-[tool.setuptools.dynamic]
-version = {attr = "ps_ui.version.__version__"}
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
