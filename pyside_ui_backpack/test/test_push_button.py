@@ -1,10 +1,9 @@
 import sys
-from PySide2.QtWidgets import QApplication
-from PySide2.QtWidgets import QMainWindow
 
-from ps_ui.css.colors import Colors
-from ps_ui.widgets.push_button import PushButton
+from PySide2.QtWidgets import QApplication, QMainWindow
 
+from pyside_ui_backpack.css.colors import Colors
+from pyside_ui_backpack.widgets.push_button import PushButton
 
 if __name__ == '__main__':
     # create a qt application
@@ -21,7 +20,8 @@ if __name__ == '__main__':
     # create a push button for every color in Colors
     for index, color in enumerate(Colors):
         push_button = PushButton(
-            main_window, f'push_button {index}', color.name, (100, 30), color, True)
+            main_window, f'push_button {index}', color.name, (100, 30), color, True
+        )
         column = index % 3
         row = index // 3
         push_button.move(20 + (column * 120), 20 + (row * 40))

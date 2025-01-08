@@ -1,5 +1,5 @@
-from enum import Enum
 from collections import namedtuple
+from enum import Enum
 
 Color = namedtuple('Color', ['foreground_color', 'background_color'])
 
@@ -8,7 +8,8 @@ _DARK = 'rgb(50, 50, 50)'
 
 
 class Colors(Enum):
-    '''  buttons color themes '''
+    """buttons color themes."""
+
     DISABLED = Color('rgb(80, 80, 80)', 'rgb(180, 180, 180)')
 
     BLUE = Color('rgb(46, 134, 193)', _WHITE)
@@ -40,7 +41,8 @@ class Colors(Enum):
 
 
 if __name__ == '__main__':
-    print(f'Value for {Colors.BLUE} is '
-          f'foreground_color {Colors.BLUE.value.foreground_color} and '
-          f'background_color {Colors.BLUE.value.background_color}'
-          )
+    print(
+        f'Value for {Colors.BLUE} is '
+        f'foreground_color {Colors.BLUE.value.foreground_color} and '
+        f'background_color {Colors.BLUE.value.background_color}'
+    )

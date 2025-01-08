@@ -1,9 +1,27 @@
-''' Arcane2 Widgets CSS '''
-from PySide2.QtWidgets import QGroupBox, QCheckBox, QComboBox, QMainWindow
-from PySide2.QtWidgets import QLineEdit, QMenu, QListWidget
+"""Arcane2 Widgets CSS."""
+try:
+    from PySide2.QtWidgets import (
+        QCheckBox,
+        QComboBox,
+        QGroupBox,
+        QLineEdit,
+        QListWidget,
+        QMainWindow,
+        QMenu,
+    )
+except ImportError:
+    from PySide6.QtWidgets import (
+        QCheckBox,
+        QComboBox,
+        QGroupBox,
+        QLineEdit,
+        QListWidget,
+        QMainWindow,
+        QMenu,
+    )
 
 
-main_css = ("""
+main_css = """
 
     QPushButton {
         color: rgb(230, 230, 230);
@@ -70,9 +88,9 @@ main_css = ("""
         border: 1px solid rgb(200, 200, 200);
     }
 
-    """)
+    """
 
-qmenu_css = ("""
+qmenu_css = """
     QMenuBar {
         background: rgb(50,50,50);
         color: rgb(250,250,250);
@@ -87,10 +105,10 @@ qmenu_css = ("""
         height: 1px;
         background: rgb(60,60,60);
     }
-    """)
+    """
 
 # lite progress bar, transparent background, blue line
-pb_bar_lite_css = ("""
+pb_bar_lite_css = """
         QProgressBar {
             background: rgb(0, 0, 0, 0);
             color: rgb(235, 235, 235);
@@ -102,10 +120,10 @@ pb_bar_lite_css = ("""
             margin: 9px;
             border-radius: 10px;
             }
-        """)
+        """
 
 
-combobox_css = ("""
+combobox_css = """
     /* base css */
     QComboBox {
         font-family : Segoe UI;
@@ -170,15 +188,15 @@ combobox_css = ("""
         outline: none;
     }
 
-    """)
+    """
 
-radio_css = ("""
+radio_css = """
     QRadioButton {
         color: rgb(230, 230, 230);
     }
-    """)
+    """
 
-groupbox_white_css = ("""
+groupbox_white_css = """
     QGroupBox {
         font: bold;
         border: 1px solid silver;
@@ -191,9 +209,9 @@ groupbox_white_css = ("""
         left: 10px;
         padding: -5px 5px 0px 5px;
     }
-        """)
+        """
 
-checkbox_css = ("""
+checkbox_css = """
     QCheckBox {
         color: rgb(230, 230, 230);
     }
@@ -221,25 +239,23 @@ checkbox_css = ("""
     QCheckBox:indicator:hover {
         border: 1px solid rgb(200, 200, 200);
     }
-    """)
+    """
 
-qlistwidget_css = ("""
+qlistwidget_css = """
     QListWidget {
         background-color: rgb(40, 40, 40);
         color: rgb(220, 220, 220);
     }
-    """)
+    """
 
-qlineedit_css = ("""
+qlineedit_css = """
         background-color: rgb(40, 40, 40);
         color: rgb(220, 220, 220);
-    """)
+    """
 
 
 def load_css(window: QMainWindow):
-    ''' find widgets and loads css
-    Use this method to apply the entire css style to the ui
-    '''
+    """Find widgets and loads css. Use this method to apply the entire css style to the ui."""
     for widget in window.findChildren(QGroupBox):
         widget.setStyleSheet(groupbox_white_css)
 

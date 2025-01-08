@@ -1,8 +1,8 @@
 import sys
+
 from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton
 
-from ps_ui import style_push_button, Colors
-
+from pyside_ui_backpack import Colors, style_push_button
 
 if __name__ == '__main__':
     # create a qt application

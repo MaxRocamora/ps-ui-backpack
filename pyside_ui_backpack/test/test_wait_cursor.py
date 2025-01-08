@@ -1,9 +1,9 @@
 import sys
 import time
+
 from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton
 
-from ps_ui.widgets.wait_cursor import wait_cursor
-
+from pyside_ui_backpack.widgets.wait_cursor import wait_cursor
 
 if __name__ == '__main__':
     # create a qt application

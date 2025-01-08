@@ -1,17 +1,38 @@
-from PySide2.QtCore import QSize
-from PySide2.QtGui import QColor
-from PySide2.QtWidgets import QSizePolicy, QPushButton, QGraphicsDropShadowEffect, QMainWindow
+try:
+    from PySide2.QtCore import QSize
+    from PySide2.QtGui import QColor
+    from PySide2.QtWidgets import (
+        QGraphicsDropShadowEffect,
+        QMainWindow,
+        QPushButton,
+        QSizePolicy,
+    )
+except ImportError:
+    from PySide6.QtCore import QSize
+    from PySide6.QtGui import QColor
+    from PySide6.QtWidgets import (
+        QGraphicsDropShadowEffect,
+        QMainWindow,
+        QPushButton,
+        QSizePolicy,
+    )
 
-from ps_ui.css.colors import Colors
+from pyside_ui_backpack.css.colors import Colors
 
 
 class PushButton(QPushButton):
-
-    def __init__(self, parent: QMainWindow = None, qt_name: str = 'push_button',
-                 text: str = 'button', size: tuple = None, color: Colors = Colors.GREY,
-                 shadow: bool = True, **kwargs):
+    def __init__(
+        self,
+        parent: QMainWindow = None,
+        qt_name: str = 'push_button',
+        text: str = 'button',
+        size: tuple = None,
+        color: Colors = Colors.GREY,
+        shadow: bool = True,
+        **kwargs,
+    ):
         super().__init__(parent, **kwargs)
-        ''' creates a custom QPushButton widget
+        """ creates a custom QPushButton widget
 
         Args:
             parent (ui): parent ui class. Defaults to None.
@@ -20,7 +41,7 @@ class PushButton(QPushButton):
             size (int tuple, optional): widget size. Defaults to None.
             color (Colors, optional): color theme. Defaults to Colors.GRAY.
             shadow (bool, optional): applies shadow. Defaults to True.
-        '''
+        """
         self.setObjectName(qt_name)
 
         # text
@@ -38,7 +59,7 @@ class PushButton(QPushButton):
         self.setSizePolicy(size_policy)
 
         # css & color theme
-        css = ("""
+        css = """
             QPushButton {
                 background-color: %s;
                 color: %s;
@@ -56,7 +77,6 @@ class PushButton(QPushButton):
                 background-color: rgb(60, 60, 60);
             }
         """ % (color.value.background_color, color.value.foreground_color)
-               )
 
         self.setStyleSheet(css)
 

@@ -1,14 +1,22 @@
-from PySide2.QtWidgets import QPushButton, QMainWindow, QGraphicsDropShadowEffect
-from PySide2.QtGui import QColor
+try:
+    from PySide2.QtGui import QColor
+    from PySide2.QtWidgets import QGraphicsDropShadowEffect, QMainWindow, QPushButton
+except ImportError:
+    from PySide6.QtGui import QColor
+    from PySide6.QtWidgets import QGraphicsDropShadowEffect, QMainWindow, QPushButton
 
-from ps_ui.css.colors import Colors
+from pyside_ui_backpack.css.colors import Colors
 
 
-def style_push_button(QtWindow: QMainWindow, button: QPushButton,
-                      color: Colors = Colors.GREY, shadow: bool = True):
-    ''' apply style to a QPushButton widget
+def style_push_button(
+    qt_window: QMainWindow,
+    button: QPushButton,
+    color: Colors = Colors.GREY,
+    shadow: bool = True,
+):
+    """Apply style to a QPushButton widget.
 
-        Colors are:
+    Colors are:
             red for red/white
             orange for orange/black
             disabled for gray/gray
@@ -21,12 +29,11 @@ def style_push_button(QtWindow: QMainWindow, button: QPushButton,
     shadow is a boolean to enable/disable shadow effect
 
     Args:
-        QtWindow (QMainWindow): parent QMainWindow
+        qt_window (QMainWindow): parent QMainWindow
         button (QPushButton): QPushButton widget
         color (Colors, optional): color theme. Defaults to Colors.GRAY.
         shadow (bool, optional): enable/disable shadow effect. Defaults to True.
-
-    '''
+    """
 
     css_basic_btn = """
         color:{};
@@ -38,7 +45,7 @@ def style_push_button(QtWindow: QMainWindow, button: QPushButton,
     button.setStyleSheet(css_basic_btn)
 
     if shadow:
-        shadow = QGraphicsDropShadowEffect(QtWindow)
+        shadow = QGraphicsDropShadowEffect(qt_window)
         shadow.setBlurRadius(6)
         shadow.setOffset(3)
         shadow.setColor(QColor(0, 0, 0, 60))

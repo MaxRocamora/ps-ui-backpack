@@ -1,8 +1,8 @@
 import sys
+
 from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton
 
-from ps_ui import dialogs
-
+from pyside_ui_backpack import dialogs
 
 if __name__ == '__main__':
     # create a qt application
@@ -23,9 +23,9 @@ if __name__ == '__main__':
     button.move(20, 20)
     button.show()
     button.clicked.connect(
-        lambda: dialogs.inform_dialog(main_window,
-                                      'this is an inform dialog',
-                                      'Title for inform dialog')
+        lambda: dialogs.inform_dialog(
+            main_window, 'this is an inform dialog', 'Title for inform dialog'
+        )
     )
 
     # create a push button that calls a function when clicked
@@ -34,9 +34,9 @@ if __name__ == '__main__':
     button_info_default.move(20, 60)
     button_info_default.show()
     button_info_default.clicked.connect(
-        lambda: dialogs.inform_dialog_small(main_window,
-                                            'this is an inform dialog',
-                                            'Title for inform dialog')
+        lambda: dialogs.inform_dialog_small(
+            main_window, 'this is an inform dialog', 'Title for inform dialog'
+        )
     )
 
     # warning dialog button
@@ -45,9 +45,9 @@ if __name__ == '__main__':
     button2.move(20, 100)
     button2.show()
     button2.clicked.connect(
-        lambda: dialogs.warning_dialog(main_window,
-                                       'this is a warning dialog',
-                                       'Title for warning dialog')
+        lambda: dialogs.warning_dialog(
+            main_window, 'this is a warning dialog', 'Title for warning dialog'
+        )
     )
 
     # warning dialog small button
@@ -56,9 +56,9 @@ if __name__ == '__main__':
     button_warning_small.move(20, 140)
     button_warning_small.show()
     button_warning_small.clicked.connect(
-        lambda: dialogs.warning_dialog_small(main_window,
-                                             'this is a warning dialog',
-                                             'Title for warning dialog')
+        lambda: dialogs.warning_dialog_small(
+            main_window, 'this is a warning dialog', 'Title for warning dialog'
+        )
     )
 
     # start the event loop
