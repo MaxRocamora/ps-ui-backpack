@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyside-ui-backpack"
-version = "1.0.6"
+version = "1.0.7"
 description = "Helper functions for PySide2 UI Widgets"
 authors = ["Maximiliano Rocamora <maxirocamora@gmail.com>"]
 readme = "README.md"
@@ -12,12 +12,15 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<3.14"
+python = ">=3.7,<3.16"
 
 [tool.poetry.dev-dependencies]
 pyside6 = "^6.8.1.1"

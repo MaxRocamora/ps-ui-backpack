@@ -8,6 +8,11 @@
 
 Some shared PySide2 UI utilities for Maya/Houdini/Nuke Qt Tools
 
+## Compatibility
+
+- Current release: 1.0.7
+- Supported Python versions: 3.7 to 3.15
+
 ## Installation
 
 ```bash
