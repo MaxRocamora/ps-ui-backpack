@@ -2,11 +2,13 @@ from pyside_ui_backpack.css.colors import Colors
 
 
 def test_colors_include_expected_themes():
+    """Test that the Colors enum includes expected color themes."""
     expected = {'BLUE', 'RED', 'GREEN', 'GREY', 'DARK_BLUE', 'BG_BLACK'}
     assert expected.issubset(set(Colors.__members__.keys()))
 
 
 def test_color_values_have_foreground_and_background():
+    """Test that each color theme has valid foreground and background color values."""
     for color in Colors:
         assert isinstance(color.value.foreground_color, str)
         assert isinstance(color.value.background_color, str)

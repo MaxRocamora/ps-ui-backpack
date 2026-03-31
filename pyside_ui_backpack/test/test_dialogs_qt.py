@@ -8,6 +8,7 @@ from pyside_ui_backpack.dialogs import dialogs as dialogs_module
 
 
 def test_custom_size_dialog_layout(qtbot):
+    """Test that the CustomSizeDialog has the expected layout and properties."""
     parent = QMainWindow()
     qtbot.addWidget(parent)
 
@@ -27,6 +28,7 @@ def test_custom_size_dialog_layout(qtbot):
 
 
 def test_dialog_helpers_use_exec_helper(monkeypatch, qtbot):
+    """Test that the dialog helper functions use the _exec_dialog helper."""
     parent = QMainWindow()
     qtbot.addWidget(parent)
 

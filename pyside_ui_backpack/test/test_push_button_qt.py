@@ -9,6 +9,7 @@ from pyside_ui_backpack.widgets.push_button import PushButton
 
 
 def test_push_button_basic_properties(qtbot):
+    """Test that the PushButton has the expected properties and styles."""
     main_window = QMainWindow()
     qtbot.addWidget(main_window)
 
