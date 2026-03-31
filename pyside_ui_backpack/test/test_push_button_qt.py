@@ -35,6 +35,7 @@ def test_push_button_basic_properties(qtbot):
 
 
 def test_push_button_shadow_enabled_creates_effect(qtbot):
+    """Test that enabling shadow on the PushButton creates a graphics effect."""
     main_window = QMainWindow()
     qtbot.addWidget(main_window)
 
