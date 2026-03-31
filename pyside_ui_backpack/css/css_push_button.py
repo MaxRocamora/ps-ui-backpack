@@ -49,8 +49,8 @@ def style_push_button(
     button.setStyleSheet(css_basic_btn)
 
     if shadow:
-        shadow = QGraphicsDropShadowEffect(qt_window)
-        shadow.setBlurRadius(6)
-        shadow.setOffset(3)
-        shadow.setColor(QColor(0, 0, 0, 60))
-        button.setGraphicsEffect(shadow)
+        shadow_effect = QGraphicsDropShadowEffect(qt_window)
+        shadow_effect.setBlurRadius(6)
+        shadow_effect.setOffset(3)
+        shadow_effect.setColor(QColor(0, 0, 0, 60))
+        button.setGraphicsEffect(shadow_effect)
