@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyside-ui-backpack"
-version = "1.0.7"
+version = "1.0.8"
 description = "Helper functions for PySide2 UI Widgets"
 authors = ["Maximiliano Rocamora <maxirocamora@gmail.com>"]
 readme = "README.md"
@@ -21,8 +21,8 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.9,<3.16"
 
-[tool.poetry.dev-dependencies]
-pyside6 = "^6.8.1.1"
+[tool.poetry.group.dev.dependencies]
+pyside6 = { version = "^6.8.1.1", python = ">=3.9,<3.15" }
 pytest = "^8.3.5"
 pytest-qt = "^4.4.0"
 

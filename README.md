@@ -10,7 +10,7 @@ Some shared PySide2 UI utilities for Maya/Houdini/Nuke Qt Tools
 
 ## Compatibility
 
-- Current release: 1.0.7
+- Current release: 1.0.8
 - Supported Python versions: 3.9 to 3.15
 
 ## Installation
@@ -92,8 +92,8 @@ def long_running_function():
 
 ## Changelog (Latest)
 
-- 1.0.7 (03/2026)
-- Package version bumped to 1.0.7.
+- 1.0.8 (03/2026)
+- Package version bumped to 1.0.8.
 - Python support updated to 3.9 through 3.15.
 - Compatibility and typing improvements for PySide2/PySide6 APIs.
 - Demo scripts moved to `pyside_ui_backpack/demo` and automated tests expanded.
