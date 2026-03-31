@@ -89,3 +89,16 @@ from pyside_ui_backpack import wait_cursor
 def long_running_function():
     pass
 ```
+
+## Changelog (Latest)
+
+- 1.0.7 (03/2026)
+- Package version bumped to 1.0.7.
+- Python support updated to 3.9 through 3.15.
+- Compatibility and typing improvements for PySide2/PySide6 APIs.
+- Demo scripts moved to `pyside_ui_backpack/demo` and automated tests expanded.
+- README examples corrected and aligned with current package imports.
+
+## Future Update Note
+
+In a future release, support for PySide2 and Python 3.9/3.10 will be dropped.
