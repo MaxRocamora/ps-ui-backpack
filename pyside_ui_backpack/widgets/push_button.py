@@ -1,3 +1,5 @@
+from typing import TYPE_CHECKING
+
 try:
     from PySide2.QtCore import QSize  # type: ignore
     from PySide2.QtGui import QColor  # type: ignore
@@ -7,6 +9,7 @@ try:
         QPushButton,
         QSizePolicy,
     )
+    IS_PYSIDE2 = True
 except ImportError:
     from PySide6.QtCore import QSize
     from PySide6.QtGui import QColor
@@ -16,23 +19,36 @@ except ImportError:
         QPushButton,
         QSizePolicy,
     )
+    IS_PYSIDE2 = False
+
+if TYPE_CHECKING:
+    from PySide6.QtWidgets import QMainWindow as _QMainWindow
+    from PySide6.QtWidgets import QPushButton as _PushButtonBase
+else:
+    _QMainWindow = QMainWindow
+    _PushButtonBase = QPushButton
+
+
+if IS_PYSIDE2:
+    SIZEPOLICY_FIXED = getattr(QSizePolicy, 'Fixed')
+else:
+    SIZEPOLICY_FIXED = QSizePolicy.Policy.Fixed
 
 from pyside_ui_backpack.css.colors import Colors
 
 
-class PushButton(QPushButton):
+class PushButton(_PushButtonBase):
     def __init__(
         self,
-        parent: QMainWindow = None,
+        parent: _QMainWindow | None = None,
         qt_name: str = 'push_button',
         text: str = 'button',
-        size: tuple = None,
+        size: tuple[int, int] | None = None,
         color: Colors = Colors.GREY,
         shadow: bool = True,
         **kwargs,
     ):
-        super().__init__(parent, **kwargs)
-        """ creates a custom QPushButton widget
+        """Create a custom QPushButton widget.
 
         Args:
             parent (ui): parent ui class. Defaults to None.
@@ -41,7 +57,9 @@ class PushButton(QPushButton):
             size (int tuple, optional): widget size. Defaults to None.
             color (Colors, optional): color theme. Defaults to Colors.GRAY.
             shadow (bool, optional): applies shadow. Defaults to True.
+            **kwargs: Additional keyword arguments passed to QPushButton.
         """
+        super().__init__(parent, **kwargs)
         self.setObjectName(qt_name)
 
         # text
@@ -53,7 +71,7 @@ class PushButton(QPushButton):
             self.setMinimumSize(btn_size)
             self.setMaximumSize(btn_size)
 
-        size_policy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        size_policy = QSizePolicy(SIZEPOLICY_FIXED, SIZEPOLICY_FIXED)
         size_policy.setHorizontalStretch(0)
         size_policy.setVerticalStretch(0)
         self.setSizePolicy(size_policy)
@@ -82,8 +100,8 @@ class PushButton(QPushButton):
 
         # shadow
         if shadow:
-            shadow = QGraphicsDropShadowEffect(parent)
-            shadow.setBlurRadius(6)
-            shadow.setOffset(4)
-            shadow.setColor(QColor(0, 0, 0, 80))
-            self.setGraphicsEffect(shadow)
+            shadow_effect = QGraphicsDropShadowEffect(parent)
+            shadow_effect.setBlurRadius(6)
+            shadow_effect.setOffset(4)
+            shadow_effect.setColor(QColor(0, 0, 0, 80))
+            self.setGraphicsEffect(shadow_effect)
