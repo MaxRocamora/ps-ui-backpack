@@ -19,33 +19,44 @@ Some shared PySide2 UI utilities for Maya/Houdini/Nuke Qt Tools
 pip install pyside-ui-backpack
 ```
 
+## Demos
+
+Run the manual UI demo applications:
+
+```bash
+python -m pyside_ui_backpack.demo.demo_push_button_pyside6
+python -m pyside_ui_backpack.demo.demo_css_button_pyside6
+python -m pyside_ui_backpack.demo.demo_dialogs_pyside6
+python -m pyside_ui_backpack.demo.demo_wait_cursor_pyside6
+```
+
 ## Usage
 
 ### Widgets
 
 ```python
-from ps_ui import widgets, Colors
+from pyside_ui_backpack import PushButton, Colors
 
-widgets.PushButton(parent, 'qt_name', 'Click Me' , (120, 21) , Colors.BLUE)
+PushButton(parent, 'qt_name', 'Click Me' , (120, 21) , Colors.BLUE)
 
 ```
 
 ### Dialogs
 
 ```python
-from ps_ui import dialogs
+from pyside_ui_backpack import dialogs
 
 dialogs.inform_dialog(parent, 'message', 'title')
-dialog.inform_dialog_small(parent, 'message', 'title')
+dialogs.inform_dialog_small(parent, 'message', 'title')
 dialogs.warning_dialog(parent, 'error_message', 'title')
-dialogs.warning_dialog(parent, 'error_message', 'title')
+dialogs.warning_dialog_small(parent, 'error_message', 'title')
 
 ```
 
 ### CSS
 
 ```python
-from ps_ui import style_push_button, Colors
+from pyside_ui_backpack import style_push_button, Colors
 
 # style a button widget
 button = QPushButton(main_window)
@@ -58,7 +69,7 @@ style_push_button(main_window, button, Colors.BLUE)
 Colors.py contains a list of colors
 
 ```python
-from ps_ui import Colors
+from pyside_ui_backpack import Colors
 
 Colors.DISABLED Colors.BLUE, Colors.RED, Colors.GREEN, Colors.YELLOW, ...
 Colors.DARK_BLUE, Colors.DARK_RED, Colors.DARK_GREEN, Colors.DARK_YELLOW, ...
@@ -72,7 +83,7 @@ Colors.BG_BLUE, Colors.BG_RED, Colors.BG_GREEN, Colors.BG_YELLOW, ...
 Wait Cursor decorator
 
 ```python
-from ps_ui import wait_cursor
+from pyside_ui_backpack import wait_cursor
 
 @wait_cursor
 def long_running_function():

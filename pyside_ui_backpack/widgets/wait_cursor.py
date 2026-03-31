@@ -1,8 +1,9 @@
+from functools import wraps
 from typing import Callable
 
 try:
-    from PySide2.QtCore import Qt
-    from PySide2.QtWidgets import QApplication
+    from PySide2.QtCore import Qt  # type: ignore
+    from PySide2.QtWidgets import QApplication  # type: ignore
 except ImportError:
     from PySide6.QtCore import Qt
     from PySide6.QtWidgets import QApplication
@@ -18,14 +19,15 @@ def wait_cursor(method: Callable) -> Callable:
     Use QApplication.processEvents() to update the UI while the wait cursor is active.
     """
 
+    @wraps(method)
     def wrapper(*args, **kwargs):
         QApplication.setOverrideCursor(Qt.WaitCursor)
         QApplication.processEvents()
 
         try:
             r = method(*args, **kwargs)
-        except Exception as e:
-            raise e
+        except Exception:
+            raise
         finally:
             QApplication.restoreOverrideCursor()
             QApplication.processEvents()

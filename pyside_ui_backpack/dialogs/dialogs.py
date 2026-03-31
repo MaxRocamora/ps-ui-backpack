@@ -1,7 +1,7 @@
 try:
-    from PySide2.QtCore import QSize
-    from PySide2.QtGui import QIcon
-    from PySide2.QtWidgets import (
+    from PySide2.QtCore import QSize  # type: ignore
+    from PySide2.QtGui import QIcon  # type: ignore
+    from PySide2.QtWidgets import (  # type: ignore
         QApplication,
         QDialog,
         QLabel,
@@ -11,6 +11,8 @@ try:
         QSizePolicy,
         QStyle,
     )
+
+    IS_PYSIDE2 = True
 except ImportError:
     from PySide6.QtCore import QSize
     from PySide6.QtGui import QIcon
@@ -25,11 +27,21 @@ except ImportError:
         QStyle,
     )
 
+    IS_PYSIDE2 = False
+
+
+def _exec_dialog(dialog: QDialog) -> int:
+    """Execute a modal dialog with PySide2/PySide6 compatibility."""
+    if IS_PYSIDE2:
+        return dialog.exec_()
+    else:
+        return dialog.exec()
+
 
 def inform_dialog(parent: QMainWindow, message: str, title: str = ''):
     """Open qt dialog box with a warning message."""
     msg_box = CustomSizeDialog(parent, message, title, QStyle.SP_MessageBoxInformation)
-    msg_box.exec_()
+    _exec_dialog(msg_box)
 
 
 def inform_dialog_small(parent: QMainWindow, message: str, title: str = ''):
@@ -42,13 +54,13 @@ def inform_dialog_small(parent: QMainWindow, message: str, title: str = ''):
     msg_box.setText(message)
     msg_box.setWindowTitle(title)
     msg_box.setStandardButtons(QMessageBox.Close)
-    msg_box.exec_()
+    _exec_dialog(msg_box)
 
 
 def warning_dialog(parent: QMainWindow, message: str, title: str = ''):
     """Open qt dialog box with a warning message."""
     msg_box = CustomSizeDialog(parent, message, title, QStyle.SP_MessageBoxWarning)
-    msg_box.exec_()
+    _exec_dialog(msg_box)
 
 
 def warning_dialog_small(parent: QMainWindow, error_message: str, title: str = ''):
@@ -59,7 +71,7 @@ def warning_dialog_small(parent: QMainWindow, error_message: str, title: str = '
     msg_box.setText(error_message)
     msg_box.setWindowTitle(title)
     msg_box.setStandardButtons(QMessageBox.Close)
-    msg_box.exec_()
+    _exec_dialog(msg_box)
 
 
 class CustomSizeDialog(QDialog):

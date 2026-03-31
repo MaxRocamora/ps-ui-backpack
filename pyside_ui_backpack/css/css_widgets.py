@@ -1,6 +1,7 @@
 """Arcane2 Widgets CSS."""
+
 try:
-    from PySide2.QtWidgets import (
+    from PySide2.QtWidgets import (  # type: ignore
         QCheckBox,
         QComboBox,
         QGroupBox,

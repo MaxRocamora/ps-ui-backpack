@@ -1,7 +1,7 @@
 try:
-    from PySide2.QtCore import QSize
-    from PySide2.QtGui import QColor
-    from PySide2.QtWidgets import (
+    from PySide2.QtCore import QSize  # type: ignore
+    from PySide2.QtGui import QColor  # type: ignore
+    from PySide2.QtWidgets import (  # type: ignore
         QGraphicsDropShadowEffect,
         QMainWindow,
         QPushButton,

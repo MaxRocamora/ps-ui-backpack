@@ -1,57 +1,55 @@
-import sys
-import time
+import pytest
 
-from PySide2.QtWidgets import QApplication, QMainWindow, QPushButton
+pytest.importorskip('PySide6')
 
-from pyside_ui_backpack.widgets.wait_cursor import wait_cursor
+import pyside_ui_backpack.widgets.wait_cursor as wait_cursor_module
 
-if __name__ == '__main__':
-    # create a qt application
-    app = QApplication(sys.argv)
 
-    # create a main window
-    main_window = QMainWindow()
+class DummyQt:
+    WaitCursor = object()
 
-    # set the size of the main window
-    main_window.setMinimumSize(200, 200)
-    main_window.setMaximumSize(200, 200)
 
-    main_window.show()
+class DummyApp:
+    calls = []
 
-    # create a push button that calls a function when clicked
-    button = QPushButton(main_window)
-    button.setText('click me')
-    button.move(20, 20)
-    button.show()
-    button.clicked.connect(lambda: long_running_function())
+    @staticmethod
+    def setOverrideCursor(cursor):
+        DummyApp.calls.append(('set', cursor))
 
-    @wait_cursor
-    def long_running_function():
-        for i in range(1, 4):
-            button.setText(f'working... {i}')
-            QApplication.processEvents()
-            time.sleep(1)
+    @staticmethod
+    def processEvents():
+        DummyApp.calls.append(('process', None))
 
-        button.setText('click me')
+    @staticmethod
+    def restoreOverrideCursor():
+        DummyApp.calls.append(('restore', None))
 
-    # create a push button that calls a function when clicked
-    button2 = QPushButton(main_window)
-    button2.setText('click me, function failed')
-    button2.move(20, 120)
-    # set the size of the push button
-    button2.resize(160, 30)
-    button2.show()
-    button2.clicked.connect(lambda: function_that_fails())
 
-    @wait_cursor
-    def function_that_fails():
-        for i in range(1, 4):
-            button2.setText(f'working... {i}')
-            QApplication.processEvents()
-            time.sleep(1)
-            raise Exception('function failed')
+def test_wait_cursor_wraps_success(monkeypatch):
+    monkeypatch.setattr(wait_cursor_module, 'Qt', DummyQt)
+    monkeypatch.setattr(wait_cursor_module, 'QApplication', DummyApp)
+    DummyApp.calls = []
 
-        button2.setText('click me, function failed')
+    @wait_cursor_module.wait_cursor
+    def do_work(value):
+        return value * 2
 
-    # start the event loop
-    sys.exit(app.exec_())
+    assert do_work(3) == 6
+    assert DummyApp.calls[0] == ('set', DummyQt.WaitCursor)
+    assert DummyApp.calls[-2:] == [('restore', None), ('process', None)]
+
+
+def test_wait_cursor_wraps_exception(monkeypatch):
+    monkeypatch.setattr(wait_cursor_module, 'Qt', DummyQt)
+    monkeypatch.setattr(wait_cursor_module, 'QApplication', DummyApp)
+    DummyApp.calls = []
+
+    @wait_cursor_module.wait_cursor
+    def fail():
+        raise RuntimeError('boom')
+
+    with pytest.raises(RuntimeError, match='boom'):
+        fail()
+
+    assert DummyApp.calls[0] == ('set', DummyQt.WaitCursor)
+    assert DummyApp.calls[-2:] == [('restore', None), ('process', None)]
