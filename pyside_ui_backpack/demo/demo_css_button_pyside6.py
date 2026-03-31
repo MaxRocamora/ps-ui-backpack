@@ -28,7 +28,14 @@ if __name__ == '__main__':
     button = QPushButton(main_window)
     button.setText('warning')
     button.move(20, 60)
-    style_push_button(main_window, button, Colors.DARK_ORANGE)
+    style_push_button(main_window, button, Colors.BG_ORANGE)
+    button.show()
+
+    # test button 3
+    button = QPushButton(main_window)
+    button.setText('error')
+    button.move(20, 100)
+    style_push_button(main_window, button, Colors.BG_RED)
     button.show()
 
     # start the event loop
