@@ -4,9 +4,22 @@ from typing import Callable
 try:
     from PySide2.QtCore import Qt  # type: ignore
     from PySide2.QtWidgets import QApplication  # type: ignore
+
+    IS_PYSIDE2 = True
 except ImportError:
     from PySide6.QtCore import Qt
     from PySide6.QtWidgets import QApplication
+
+    IS_PYSIDE2 = False
+
+
+def _resolve_wait_cursor():
+    """Resolve wait cursor across Qt enum styles and monkeypatched test doubles."""
+    cursor = getattr(Qt, 'WaitCursor', None)
+    if cursor is not None:
+        return cursor
+
+    return Qt.CursorShape.WaitCursor
 
 
 def wait_cursor(method: Callable) -> Callable:
@@ -21,7 +34,7 @@ def wait_cursor(method: Callable) -> Callable:
 
     @wraps(method)
     def wrapper(*args, **kwargs):
-        QApplication.setOverrideCursor(Qt.WaitCursor)
+        QApplication.setOverrideCursor(_resolve_wait_cursor())
         QApplication.processEvents()
 
         try:
