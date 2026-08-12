@@ -13,4 +13,4 @@ def test_version_string_matches_parts():
 
 def test_version_is_current_release():
     """Test that the __version__ string matches the current release version."""
-    assert __version__ == '1.0.7'
+    assert __version__ == '1.0.8'
